@@ -16,7 +16,7 @@ import ru.geekbrains.lesson4.repositories.*;
 import java.util.List;
 import java.util.Optional;
 
-//Здесь реализована пагинация;
+//Здесь реализована пагинация;;
 public class Main {
 
     public static void main(String[] args) {

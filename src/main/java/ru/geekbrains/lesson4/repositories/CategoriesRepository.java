@@ -9,6 +9,7 @@ import ru.geekbrains.lesson4.entity.Product;
 
 import java.util.List;
 
+//здесь запрос и когда его прописал вываливается исключение, что categoriesRepository не создан бин;
 @Repository
 public interface CategoriesRepository extends JpaRepository<Category, Long> {
     List<Category> findByNameCategory(String nameCategory);

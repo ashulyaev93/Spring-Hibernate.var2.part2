@@ -11,7 +11,7 @@ import ru.geekbrains.lesson4.entity.User;
 import ru.geekbrains.lesson4.repositories.ArticlesRepository;
 import ru.geekbrains.lesson4.repositories.CategoriesRepository;
 
-//через этот класс вывожу категории с товарами; Почему это делается именно через DAO???
+//через этот класс вывожу категории с товарами; Почему это делается именно через DAO?
 public class MainDAO {
 
     public static void main(String[] args) {
