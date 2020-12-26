@@ -12,14 +12,13 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-
     private ProductRepository productRepository;
 
-    @Autowired
     public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
+    @Autowired
     public void setProductRepository(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
@@ -29,6 +28,18 @@ public class ProductServiceImpl implements ProductService {
         List<Product> ProductByMaxPrice = productRepository.getProductByMaxPrice();
         System.out.println("Продукт в общем списке с максимальной ценой: " + ProductByMaxPrice);
     }
+
+    //вернуть минимальную цену в каталоге;
+    public void getProductByMinPrice(){
+        List<Product> ProductByMinPrice = productRepository.getProductByMinPrice();
+        System.out.println("Продукт в каталоге с минимальной ценой: " + ProductByMinPrice);
+    }
+
+    //вернуть минимальную и максимальную цены в каталоге;
+//    public void getProductByMinPriceAndMaxPrice(){
+//        List<Product> ProductByMinPriceAndMaxPrice = productRepository.getProductByMinPriceAndMaxPrice();
+//        System.out.println("Продукты в каталоге с минимальной и максимальными ценами: " + ProductByMinPriceAndMaxPrice);
+//    }
 
     @Override
     @Transactional(readOnly = true)

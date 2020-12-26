@@ -37,6 +37,8 @@ public class MainDAO {
         ProductRepository productsRepository = applicationContext.getBean("productRepository", ProductRepository.class);
         ProductServiceImpl productServiceImpl = new ProductServiceImpl(productsRepository);
         productServiceImpl.getProductByMaxPrice();
+        productServiceImpl.getProductByMinPrice();
+//        productServiceImpl.getProductByMinPriceAndMaxPrice();
 
 
 //        ArticlesRepository articlesRepository = applicationContext.getBean("articlesRepository", ArticlesRepository.class);
