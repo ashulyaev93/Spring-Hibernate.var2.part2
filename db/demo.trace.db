@@ -199,3 +199,23 @@ select cart0_.id as id1_2_, cart0_.code as code2_2_, cart0_.user_id as user_id3_
 2020-11-23 12:42:42 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT CART0_.ID AS ID1_2_, CART0_.CODE AS CODE2_2_, CART0_.USER_ID AS USER_ID3_2_ FROM CARTS CART0_ INNER JOIN CARTENRIES CARTENTRY1_ ON WHERE[*] CARTENTRY1_.PRODUCT_ID=? "; expected "NOT, EXISTS, INTERSECTS, SELECT, FROM, WITH"; SQL statement:
 select cart0_.id as id1_2_, cart0_.code as code2_2_, cart0_.user_id as user_id3_2_ from carts cart0_ inner join cartenries cartentry1_ on where cartentry1_.product_id=? [42001-194]
+2020-12-26 11:53:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "PRODUCT" не найдена
+Table "PRODUCT" not found; SQL statement:
+SELECT * FROM Product * WHERE p.price = (SELECT min(price) FROM Product [42102-199]
+2020-12-26 11:54:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT * FROM PRODUCTS *[*] WHERE P.PRICE = (SELECT MIN(PRICE) FROM PRODUCTS "
+Syntax error in SQL statement "SELECT * FROM PRODUCTS *[*] WHERE P.PRICE = (SELECT MIN(PRICE) FROM PRODUCTS "; SQL statement:
+SELECT * FROM Products * WHERE p.price = (SELECT min(price) FROM Products [42000-199]
+2020-12-26 11:54:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT * FROM PRODUCTS WHERE P.PRICE = (SELECT MIN(PRICE) FROM PRODUCTS [*]"; ожидалось "., (, USE, AS, RIGHT, LEFT, FULL, INNER, JOIN, CROSS, NATURAL, ,, WHERE, GROUP, HAVING, WINDOW, QUALIFY, UNION, EXCEPT, MINUS, INTERSECT, ORDER, OFFSET, FETCH, LIMIT, SAMPLE_SIZE, FOR, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "SELECT * FROM PRODUCTS WHERE P.PRICE = (SELECT MIN(PRICE) FROM PRODUCTS [*]"; expected "., (, USE, AS, RIGHT, LEFT, FULL, INNER, JOIN, CROSS, NATURAL, ,, WHERE, GROUP, HAVING, WINDOW, QUALIFY, UNION, EXCEPT, MINUS, INTERSECT, ORDER, OFFSET, FETCH, LIMIT, SAMPLE_SIZE, FOR, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+SELECT * FROM Products WHERE p.price = (SELECT min(price) FROM Products [42001-199]
+2020-12-26 11:55:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT * FROM PRODUCTS WHERE P.PRICE = (SELECT MIN(PRICE) FROM PRODUCTS [*]"; ожидалось "., (, USE, AS, RIGHT, LEFT, FULL, INNER, JOIN, CROSS, NATURAL, ,, WHERE, GROUP, HAVING, WINDOW, QUALIFY, UNION, EXCEPT, MINUS, INTERSECT, ORDER, OFFSET, FETCH, LIMIT, SAMPLE_SIZE, FOR, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "SELECT * FROM PRODUCTS WHERE P.PRICE = (SELECT MIN(PRICE) FROM PRODUCTS [*]"; expected "., (, USE, AS, RIGHT, LEFT, FULL, INNER, JOIN, CROSS, NATURAL, ,, WHERE, GROUP, HAVING, WINDOW, QUALIFY, UNION, EXCEPT, MINUS, INTERSECT, ORDER, OFFSET, FETCH, LIMIT, SAMPLE_SIZE, FOR, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+SELECT * FROM PRODUCTS WHERE p.price = (SELECT min(price) FROM PRODUCTS [42001-199]
+2020-12-26 11:56:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT * FROM PRODUCTS WHERE PRICE = (SELECT MIN(PRICE) FROM PRODUCTS [*]"; ожидалось "., (, USE, AS, RIGHT, LEFT, FULL, INNER, JOIN, CROSS, NATURAL, ,, WHERE, GROUP, HAVING, WINDOW, QUALIFY, UNION, EXCEPT, MINUS, INTERSECT, ORDER, OFFSET, FETCH, LIMIT, SAMPLE_SIZE, FOR, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "SELECT * FROM PRODUCTS WHERE PRICE = (SELECT MIN(PRICE) FROM PRODUCTS [*]"; expected "., (, USE, AS, RIGHT, LEFT, FULL, INNER, JOIN, CROSS, NATURAL, ,, WHERE, GROUP, HAVING, WINDOW, QUALIFY, UNION, EXCEPT, MINUS, INTERSECT, ORDER, OFFSET, FETCH, LIMIT, SAMPLE_SIZE, FOR, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+SELECT * FROM PRODUCTS WHERE price = (SELECT min(price) FROM PRODUCTS [42001-199]

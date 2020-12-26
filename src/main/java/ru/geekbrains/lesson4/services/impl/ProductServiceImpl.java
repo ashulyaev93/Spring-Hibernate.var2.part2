@@ -9,14 +9,23 @@ import ru.geekbrains.lesson4.services.ProductService;
 
 import java.util.List;
 
-@Service("productService")
+@Service
 public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
 
     @Autowired
+    public ProductServiceImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
     public void setProductRepository(ProductRepository productRepository) {
         this.productRepository = productRepository;
+    }
+    //!!!!!!!!!!!!!!!!!!!!!!
+    public void getProductByMaxPrice(){
+        List<Product> ProductByMaxPrice = productRepository.getProductByMaxPrice();
+        System.out.println(ProductByMaxPrice);
     }
 
     @Override

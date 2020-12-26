@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.geekbrains.lesson4.entity.Article;
 import ru.geekbrains.lesson4.repositories.ArticlesRepository;
+import ru.geekbrains.lesson4.repositories.ProductRepository;
 import ru.geekbrains.lesson4.services.ArticleService;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 public class ArticleServiceImpl implements ArticleService {
 
     private ArticlesRepository articlesRepository;
+
 
     @Autowired
     public void setArticlesRepository(ArticlesRepository articlesRepository) {

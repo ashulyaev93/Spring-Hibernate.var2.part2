@@ -10,6 +10,8 @@ import ru.geekbrains.lesson4.entity.Product;
 import ru.geekbrains.lesson4.entity.User;
 import ru.geekbrains.lesson4.repositories.ArticlesRepository;
 import ru.geekbrains.lesson4.repositories.CategoriesRepository;
+import ru.geekbrains.lesson4.services.impl.CategoryServiceImpl;
+import ru.geekbrains.lesson4.services.impl.ProductServiceImpl;
 
 //через этот класс вывожу категории с товарами; Почему это делается именно через DAO?
 public class MainDAO {
@@ -31,13 +33,17 @@ public class MainDAO {
         categoryDAO.findAll().stream().forEach(System.out::println);
 
 
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//        ProductServiceImpl productServiceImpl = new ProductServiceImpl();
+//        productServiceImpl.getProductByMaxPrice();
+
+
 //        ArticlesRepository articlesRepository = applicationContext.getBean("articlesRepository", ArticlesRepository.class);
 //
 //        articlesRepository.save(new Article("New Title 1", new User("Alex")));
 //        articlesRepository.save(new Article("New Title 2", new User("Alena")));
 //        articlesRepository.save(new Article("New Title 3", new User("Milena")));
-//
-//
+
 //        ArticleDAO articleDAO = applicationContext.getBean("articleDAO", ArticleDAO.class);
 //
 //        articleDAO.findAll().stream().forEach(System.out::println);

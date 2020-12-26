@@ -16,7 +16,4 @@ public interface CategoriesRepository extends JpaRepository<Category, Long> {
 
     @Query("select a from Category a where a.product = :product")
     List<Category> findCategoryByProduct(@Param("product") Product product);
-
-    @Query("SELECT p FROM Category p WHERE p.price = (SELECT min(price) FROM Category)")
-    List<Category> getProductFromCategoryByMinPrice();
 }
