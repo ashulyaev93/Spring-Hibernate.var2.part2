@@ -14,7 +14,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findAllByPriceGreaterThanOrderByPriceDesc(Double price);
     Product findByName(String name);
 
-    //!!!!!!!!!!!!!!!!!!
-    @Query("SELECT p FROM products p WHERE p.price = (SELECT max(price) FROM products)")
+    //JPQL запрос;
+    @Query("SELECT p FROM Product p WHERE p.price = (SELECT max(price) FROM Product)")
     List<Product> getProductByMaxPrice();
 }

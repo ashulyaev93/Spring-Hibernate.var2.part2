@@ -10,6 +10,7 @@ import ru.geekbrains.lesson4.entity.Product;
 import ru.geekbrains.lesson4.entity.User;
 import ru.geekbrains.lesson4.repositories.ArticlesRepository;
 import ru.geekbrains.lesson4.repositories.CategoriesRepository;
+import ru.geekbrains.lesson4.repositories.ProductRepository;
 import ru.geekbrains.lesson4.services.impl.CategoryServiceImpl;
 import ru.geekbrains.lesson4.services.impl.ProductServiceImpl;
 
@@ -32,10 +33,10 @@ public class MainDAO {
 
         categoryDAO.findAll().stream().forEach(System.out::println);
 
-
-        //!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//        ProductServiceImpl productServiceImpl = new ProductServiceImpl();
-//        productServiceImpl.getProductByMaxPrice();
+        //Вывод JPQL запроса;
+        ProductRepository productsRepository = applicationContext.getBean("productRepository", ProductRepository.class);
+        ProductServiceImpl productServiceImpl = new ProductServiceImpl(productsRepository);
+        productServiceImpl.getProductByMaxPrice();
 
 
 //        ArticlesRepository articlesRepository = applicationContext.getBean("articlesRepository", ArticlesRepository.class);

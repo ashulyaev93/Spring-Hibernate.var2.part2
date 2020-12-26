@@ -12,6 +12,7 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
 
+
     private ProductRepository productRepository;
 
     @Autowired
@@ -22,10 +23,11 @@ public class ProductServiceImpl implements ProductService {
     public void setProductRepository(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
-    //!!!!!!!!!!!!!!!!!!!!!!
+
+    //вернуть максимальную цену в общем списке;
     public void getProductByMaxPrice(){
         List<Product> ProductByMaxPrice = productRepository.getProductByMaxPrice();
-        System.out.println(ProductByMaxPrice);
+        System.out.println("Продукт в общем списке с максимальной ценой: " + ProductByMaxPrice);
     }
 
     @Override
